@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="962.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.LoginController">
+   <children>
+      <ImageView fitHeight="612.0" fitWidth="982.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@252-2523159_wallpaper-coc-3d-clash-of-clans-background.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="DARKEN" fill="#253748" height="338.0" layoutX="320.0" layoutY="94.0" stroke="BLACK" strokeType="INSIDE" style="-fx-smooth: 500;" width="276.0" />
+      <TextField fx:id="userNameField" alignment="CENTER" blendMode="COLOR_BURN" layoutX="366.0" layoutY="237.0" prefHeight="52.0" prefWidth="198.0" promptText="Username" style="-fx-border-color: #B22222; -fx-border-radius: 8;">
+         <font>
+            <Font name="Castellar" size="22.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="PasswordField" alignment="CENTER" blendMode="COLOR_BURN" layoutX="366.0" layoutY="306.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="52.0" prefWidth="198.0" promptText="Password" style="-fx-border-color: #B22222; -fx-border-radius: 8;">
+         <font>
+            <Font name="Castellar" size="22.0" />
+         </font>
+         <effect>
+            <Blend mode="COLOR_BURN" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="N_RESIZE" />
+         </cursor>
+      </TextField>
+      <Button defaultButton="true" ellipsisString="" graphicTextGap="6.0" layoutX="419.0" layoutY="380.0" lineSpacing="5.0" mnemonicParsing="false" onMouseClicked="#OnEnterButtonClicked" prefHeight="36.0" prefWidth="91.0" style="-fx-border-color: black; -fx-background-color: #253720; -fx-border-radius: 3;" text="Enter" textAlignment="CENTER" textFill="#050505" textOverrun="CLIP">
+         <font>
+            <Font name="Castellar" size="15.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+      </Button>
+      <ImageView fitHeight="111.0" fitWidth="102.0" layoutX="407.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pngwing.com.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="72ac18f5-7813-4c93-93b1-f5ba5320a03b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AttackOnGoliiii/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AttackOnGoliiii/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AttackOnGoliiii/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AttackOnGoliiii/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/TerritoryMap.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2RmcWsQAglauriZ9jt1b610HUlf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="GameLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.attackongoli.GameLauncher" />
+      <module name="AttackOnGoli" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.attackongoli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GameLauncher" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="72ac18f5-7813-4c93-93b1-f5ba5320a03b" name="Changes" comment="" />
+      <created>1687858734425</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687858734425</updated>
+      <workItem from="1687858735472" duration="13236000" />
+    </task>
+    <task id="LOCAL-00001" summary="DefenseBuilding added to the log">
+      <created>1687864434784</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687864434784</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ArcherTower and WizardTower and Cannon added to the log">
+      <created>1687864513674</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687864513674</updated>
+    </task>
+    <task id="LOCAL-00003" summary="BuilderHut ang Treasury and TownHall added to the log">
+      <created>1687864556984</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687864556984</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Start menu added to the log">
+      <created>1687877969792</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687877969792</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="DefenseBuilding added to the log" />
+    <MESSAGE value="ArcherTower and WizardTower and Cannon added to the log" />
+    <MESSAGE value="BuilderHut ang Treasury and TownHall added to the log" />
+    <MESSAGE value="Start menu added to the log" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start menu added to the log" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+</project>
