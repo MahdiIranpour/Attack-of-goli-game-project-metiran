@@ -4,17 +4,25 @@ import com.example.attackongoli.map.TerritoryMap;
 
 public class Player {
 
-    private String username;
-    private String Password;
+    private final String username;
+    private final String password;
     private int level;
     private TerritoryMap map;
+
+    public Player(String username, String password, int level, TerritoryMap map){
+
+        this.username = username;
+        this.password = password;
+        this.level = level;
+        this.map = map;
+    }
 
     public String getUsername() {
         return username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public int getLevel() {
