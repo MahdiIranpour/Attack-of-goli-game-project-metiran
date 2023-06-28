@@ -5,8 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ac18f5-7813-4c93-93b1-f5ba5320a03b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/GameMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/exceptions/CantInsertPlayerException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/MySQLConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/PlayersDataBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/PlayersList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Arno.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/AttackingAssassin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Attacking_Conner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Attacking_Cyndicate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Attacking_bear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Buildershut.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Cannon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Clash16Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Conner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Cyndicate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MapArena.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/game-menu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/townhall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/treashury.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/GameLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/GameLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/TerritoryMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/TerritoryMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/252-2523159_wallpaper-coc-3d-clash-of-clans-background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/EnteranceBackground.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/9e29853fe479335a58bb773609b99527 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/building_fire_shooting_normal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/pngwing.com.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -39,14 +71,31 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "last_directory_selection": "E:/Dars o zendegi/Java/final-project-game-metiran/AttackOnGoli/src/main/java/com/example/attackongoli",
+    "last_opened_file_path": "E:/Dars o zendegi/Java/final-project-game-metiran/AttackOnGoli/src/main/resources/com/example/attackongoli",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.4402299",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.attackongoli.exceptions" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Dars o zendegi\Java\final-project-game-metiran\AttackOnGoli\src\main\resources\com\example\attackongoli" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Dars o zendegi\Java\final-project-game-metiran\AttackOnGoli\src\main\resources\com\example\attackongoli" />
+      <recent name="E:\Dars o zendegi\Java\final-project-game-metiran\AttackOnGoli\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="GameLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.attackongoli.GameLauncher" />
@@ -76,7 +125,13 @@
       <option name="presentableId" value="Default" />
       <updated>1687858734425</updated>
       <workItem from="1687858735472" duration="13236000" />
-      <workItem from="1687879425387" duration="789000" />
+      <workItem from="1687879425387" duration="1425000" />
+      <workItem from="1687901510035" duration="12000" />
+      <workItem from="1687902108010" duration="14000" />
+      <workItem from="1687911013800" duration="3194000" />
+      <workItem from="1687914477575" duration="166000" />
+      <workItem from="1687942127714" duration="884000" />
+      <workItem from="1687945239384" duration="4258000" />
     </task>
     <task id="LOCAL-00001" summary="DefenseBuilding added to the log">
       <created>1687864434784</created>
@@ -113,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687879517619</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Start menu added to the log">
+      <created>1687880229804</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687880229804</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

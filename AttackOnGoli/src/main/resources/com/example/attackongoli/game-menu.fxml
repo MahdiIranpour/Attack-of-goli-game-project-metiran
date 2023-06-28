@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<fx:root prefHeight="611.0" prefWidth="1026.0" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.GameMenuController">
+   <children>
+      <ImageView fitHeight="611.0" fitWidth="1053.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../thumb-1920-1077466.jpg" />
+         </image></ImageView>
+      <Button fx:id="ProfileButton" layoutX="551.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#onProfileClicked" prefHeight="53.0" prefWidth="133.0" style="-fx-background-color: dark; -fx-border-color: black;" text="Profile">
+         <font>
+            <Font name="Castellar" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="yourMapButton" layoutX="264.0" layoutY="44.0" mnemonicParsing="false" onMouseClicked="#onYourMapClicked" prefHeight="54.0" prefWidth="156.0" style="-fx-border-color: black; -fx-background-color: dark;" text="Your Map">
+         <font>
+            <Font name="Castellar" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="attackButton" alignment="BOTTOM_CENTER" layoutX="876.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#onAttackButtonClicked" prefHeight="148.0" prefWidth="134.0" style="-fx-border-color: black; -fx-background-color: dark;" text="Attack" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+         <font>
+            <Font name="Castellar" size="19.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="106.0" fitWidth="113.0" layoutX="890.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Clash16Logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</fx:root>

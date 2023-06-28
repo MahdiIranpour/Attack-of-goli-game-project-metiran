@@ -1,5 +1,6 @@
 package com.example.attackongoli;
 
+import com.example.attackongoli.player.PlayersList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,7 +16,7 @@ import java.util.Objects;
 public class LoginController {
 
     @FXML
-    private TextField PasswordField;
+    private TextField passwordField;
 
     @FXML
     private TextField userNameField;
@@ -23,11 +24,25 @@ public class LoginController {
     @FXML
     void OnEnterButtonClicked(MouseEvent event) throws IOException {
 
-        Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("addingMoney-view.fxml")));
-        Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(parent);
-        stg.setScene(scene);
-        stg.show();
+        String username = userNameField.getText();
+        String password = passwordField.getText();
+
+        if (PlayersList.isLoggedIn(username, password)) {
+
+            Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("game-menu.fxml")));
+            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(parent);
+            stg.setScene(scene);
+            stg.show();
+
+        } else {
+
+            Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("game-menu.fxml")));
+            Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(parent);
+            stg.setScene(scene);
+            stg.show();
+        }
     }
 
 }

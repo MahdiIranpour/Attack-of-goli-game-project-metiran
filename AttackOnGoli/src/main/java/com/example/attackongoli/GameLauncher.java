@@ -10,6 +10,7 @@ import java.io.IOException;
 public class GameLauncher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+//        new TerritoryMap().setMapScene(stage);
 
         FXMLLoader fxmlLoader = new FXMLLoader(GameLauncher.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),960,600);
