@@ -18,16 +18,19 @@ public class GameMenuController {
     @FXML
     void onAttackButtonClicked(MouseEvent event) {
 
+        System.out.println("Attack");
     }
 
     @FXML
     void onMyMapClicked(MouseEvent event) {
 
+        System.out.println("Map");
     }
 
     @FXML
     void onProfileClicked(MouseEvent event) {
 
+        System.out.println("Profile");
     }
 
 }

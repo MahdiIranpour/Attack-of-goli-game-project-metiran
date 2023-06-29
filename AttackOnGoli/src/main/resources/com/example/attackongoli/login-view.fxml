@@ -11,59 +11,48 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0"
-            prefWidth="962.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.attackongoli.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="962.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.LoginController">
    <ImageView fitHeight="612.0" fitWidth="982.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@../../../EnteranceBackground.jpg"/>
+      <Image url="@../../../EnteranceBackground.jpg" />
    </ImageView>
-   <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="DARKEN" fill="#253748" height="338.0" layoutX="320.0"
-              layoutY="94.0" stroke="BLACK" strokeType="INSIDE" style="-fx-smooth: 500;" width="276.0"/>
-   <TextField fx:id="userNameField" alignment="CENTER" blendMode="COLOR_BURN" layoutX="366.0" layoutY="237.0"
-              prefHeight="52.0" prefWidth="198.0" promptText="Username"
-              style="-fx-border-color: #B22222; -fx-border-radius: 8;">
+   <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="DARKEN" fill="#253748" height="338.0" layoutX="320.0" layoutY="94.0" stroke="BLACK" strokeType="INSIDE" style="-fx-smooth: 500;" width="276.0" />
+   <TextField fx:id="userNameField" alignment="CENTER" blendMode="COLOR_BURN" layoutX="366.0" layoutY="237.0" prefHeight="52.0" prefWidth="198.0" promptText="Username" style="-fx-border-color: #B22222; -fx-border-radius: 8;">
       <font>
-         <Font name="Castellar" size="22.0"/>
+         <Font name="Castellar" size="22.0" />
       </font>
       <effect>
-         <Blend/>
+         <Blend />
       </effect>
       <cursor>
-         <Cursor fx:constant="HAND"/>
+         <Cursor fx:constant="HAND" />
       </cursor>
    </TextField>
-   <TextField fx:id="passwordField" alignment="CENTER" blendMode="COLOR_BURN" layoutX="366.0" layoutY="306.0"
-              nodeOrientation="LEFT_TO_RIGHT" prefHeight="52.0" prefWidth="198.0" promptText="Password"
-              style="-fx-border-color: #B22222; -fx-border-radius: 8;">
+   <TextField fx:id="passwordField" alignment="CENTER" blendMode="COLOR_BURN" layoutX="366.0" layoutY="306.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="52.0" prefWidth="198.0" promptText="Password" style="-fx-border-color: #B22222; -fx-border-radius: 8;">
       <font>
-         <Font name="Castellar" size="22.0"/>
+         <Font name="Castellar" size="22.0" />
       </font>
       <effect>
-         <Blend mode="COLOR_BURN"/>
+         <Blend mode="COLOR_BURN" />
       </effect>
       <cursor>
-         <Cursor fx:constant="N_RESIZE"/>
+         <Cursor fx:constant="N_RESIZE" />
       </cursor>
    </TextField>
-   <Button defaultButton="true" ellipsisString="" graphicTextGap="6.0" layoutX="419.0" layoutY="380.0" lineSpacing="5.0"
-           mnemonicParsing="false" onMouseClicked="#OnEnterButtonClicked" prefHeight="36.0" prefWidth="91.0"
-           style="-fx-border-color: black; -fx-background-color: #253720; -fx-border-radius: 3;" text="Enter"
-           textAlignment="CENTER" textFill="#050505" textOverrun="CLIP">
+   <Button fx:id="enterButton" defaultButton="true" ellipsisString="" graphicTextGap="6.0" layoutX="419.0" layoutY="380.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#OnEnterButtonClicked" prefHeight="36.0" prefWidth="91.0" style="-fx-border-color: black; -fx-background-color: #253720; -fx-border-radius: 3;" text="Enter" textAlignment="CENTER" textFill="#050505" textOverrun="CLIP">
       <font>
-         <Font name="Castellar" size="15.0"/>
+         <Font name="Castellar" size="15.0" />
       </font>
       <opaqueInsets>
-         <Insets/>
+         <Insets />
       </opaqueInsets>
       <cursor>
-         <Cursor fx:constant="TEXT"/>
+         <Cursor fx:constant="TEXT" />
       </cursor>
       <effect>
-         <Glow level="0.0"/>
+         <Glow level="0.0" />
       </effect>
    </Button>
-   <ImageView fitHeight="111.0" fitWidth="102.0" layoutX="407.0" layoutY="113.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@../../../Conner.png"/>
+   <ImageView fitHeight="111.0" fitWidth="102.0" layoutX="407.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../Conner.png" />
    </ImageView>
 </AnchorPane>

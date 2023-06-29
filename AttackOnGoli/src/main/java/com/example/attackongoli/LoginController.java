@@ -1,19 +1,24 @@
 package com.example.attackongoli;
 
 import com.example.attackongoli.player.PlayersList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
 
 public class LoginController {
+
+
+    @FXML
+    private Button enterButton;
 
     @FXML
     private TextField passwordField;
@@ -22,7 +27,7 @@ public class LoginController {
     private TextField userNameField;
 
     @FXML
-    void OnEnterButtonClicked(MouseEvent event) throws IOException {
+    void OnEnterButtonClicked(ActionEvent event) throws IOException {
 
         String username = userNameField.getText();
         String password = passwordField.getText();
