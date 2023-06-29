@@ -13,7 +13,7 @@ public class GameMenuController {
     private Button attackButton;
 
     @FXML
-    private Button yourMapButton;
+    private Button myMapButton;
 
     @FXML
     void onAttackButtonClicked(MouseEvent event) {
@@ -21,12 +21,12 @@ public class GameMenuController {
     }
 
     @FXML
-    void onProfileClicked(MouseEvent event) {
+    void onMyMapClicked(MouseEvent event) {
 
     }
 
     @FXML
-    void onYourMapClicked(MouseEvent event) {
+    void onProfileClicked(MouseEvent event) {
 
     }
 
