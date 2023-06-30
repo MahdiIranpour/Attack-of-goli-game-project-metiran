@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="564.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.HeroesListController">
+   <children>
+      <ImageView fitHeight="645.0" fitWidth="908.0" layoutX="-3.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../542786.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="615.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Attacking_bear.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="105.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Attacking_Conner.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="236.0" fitWidth="148.0" layoutX="99.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Cyndicate.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="204.0" fitWidth="183.0" layoutX="631.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Arno.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backButton" cancelButton="true" layoutX="560.0" layoutY="506.0" mnemonicParsing="false" onAction="#onBackButton" style="-fx-background-color: white; -fx-border-color: black;" text="Back">
+         <font>
+            <Font name="Castellar" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="763.0" layoutY="61.0" text="bear" textFill="WHITE">
+         <font>
+            <Font name="Castellar" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="388.0" text="jacob" textFill="WHITE">
+         <font>
+            <Font name="Castellar" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="61.0" text="connor" textFill="WHITE">
+         <font>
+            <Font name="Castellar" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="773.0" layoutY="388.0" text="arno" textFill="WHITE">
+         <font>
+            <Font name="Castellar" size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="bearLabel" layoutX="763.0" layoutY="96.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Castellar" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="jacobLabel" layoutX="22.0" layoutY="426.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Castellar" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="connorLabel" layoutX="22.0" layoutY="96.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Castellar" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="arnoLabel" layoutX="773.0" layoutY="415.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Castellar" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

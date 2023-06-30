@@ -11,7 +11,7 @@ public abstract class TerritoryMap {
     private final Building[] buildings = new Building[10];
     protected final ImageView mapImage = new ImageView(GameLauncher.class.getResource("MapArena.jpg").toString());
     protected final AnchorPane anchorPane = new AnchorPane();
-
+    protected ImageView clanImage;
     protected ImageView archerTower = new ImageView(GameLauncher.class.getResource("pngkey.com-water-tower-png-1114296.png").toString());
     protected ImageView cannon = new ImageView(GameLauncher.class.getResource("cannon.png").toString());
     protected ImageView townHall;
@@ -20,5 +20,9 @@ public abstract class TerritoryMap {
 
     public AnchorPane getAnchorPane() {
         return anchorPane;
+    }
+
+    public ImageView getClanImage() {
+        return clanImage;
     }
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="600.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.player.ProfileViewController">
+<AnchorPane prefHeight="600.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.ProfileViewController">
    <children>
       <ImageView fitHeight="606.0" fitWidth="1070.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,11 +23,11 @@
             <Font name="Castellar" size="25.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="81.0" layoutY="485.0" mnemonicParsing="false" onMouseClicked="#backButton" prefHeight="64.0" prefWidth="215.0" style="-fx-background-color: dark; -fx-border-color: black; -fx-border-radius: 8;" text="Back">
+      <Button fx:id="backButton" cancelButton="true" layoutX="81.0" layoutY="485.0" mnemonicParsing="false" onAction="#backButton" prefHeight="64.0" prefWidth="215.0" style="-fx-background-color: dark; -fx-border-color: black; -fx-border-radius: 8;" text="Back">
          <font>
             <Font name="Castellar" size="19.0" />
          </font>
       </Button>
-      <AnchorPane fx:id="myMap" layoutX="402.0" layoutY="106.0" prefHeight="200.0" prefWidth="200.0" />
+      <ImageView fx:id="myMap" fitHeight="265.0" fitWidth="408.0" layoutX="197.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

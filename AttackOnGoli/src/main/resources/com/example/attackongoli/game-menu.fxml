@@ -5,14 +5,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="514.0" prefWidth="964.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.GameMenuController">
+<AnchorPane prefHeight="514.0" prefWidth="964.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.GameMenuController">
    <children>
       <ImageView fitHeight="613.0" fitWidth="964.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../thumb-1920-1077466.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="ProfileButton" layoutX="341.0" layoutY="44.0" mnemonicParsing="false" onMouseClicked="#onProfileClicked" prefHeight="62.0" prefWidth="174.0" style="-fx-background-color: dark; -fx-border-color: black;" text="Profile">
+      <Button fx:id="ProfileButton" layoutX="340.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#onProfileClicked" prefHeight="62.0" prefWidth="174.0" style="-fx-background-color: dark; -fx-border-color: black;" text="Profile">
          <font>
             <Font name="Castellar" size="23.0" />
          </font>
@@ -22,10 +22,20 @@
             <Font name="Castellar" size="23.0" />
          </font>
       </Button>
-      <ImageView fitHeight="147.0" fitWidth="143.0" layoutX="634.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="147.0" fitWidth="143.0" layoutX="634.0" layoutY="35.0" onMouseClicked="#onAttackButtonClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Clash16Logo.png" />
          </image>
       </ImageView>
+      <Button fx:id="BackButton" cancelButton="true" layoutX="850.0" layoutY="51.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="29.0" prefWidth="99.0" style="-fx-background-color: dark; -fx-border-color: black;" text="exit">
+         <font>
+            <Font name="Castellar" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="herosButton" layoutX="340.0" layoutY="156.0" mnemonicParsing="false" onMouseClicked="#onHeroButton" prefHeight="62.0" prefWidth="174.0" style="-fx-background-color: dark; -fx-border-color: black;" text="heros">
+         <font>
+            <Font name="Castellar" size="23.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

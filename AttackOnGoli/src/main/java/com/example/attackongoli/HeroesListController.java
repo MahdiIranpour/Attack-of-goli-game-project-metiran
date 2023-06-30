@@ -1,5 +1,6 @@
-package com.example.attackongoli.player;
+package com.example.attackongoli;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -8,8 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,19 +16,25 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ProfileViewController implements Initializable {
+public class HeroesListController implements Initializable {
+
+    @FXML
+    private Label arnoLabel;
 
     @FXML
     private Button backButton;
 
     @FXML
-    private Label informationLabel;
+    private Label bearLabel;
 
     @FXML
-    private AnchorPane myMap;
+    private Label connorLabel;
 
     @FXML
-    void backButton(MouseEvent event) throws IOException {
+    private Label jacobLabel;
+
+    @FXML
+    void onBackButton(ActionEvent event) throws IOException {
 
         Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("game-menu.fxml")));
         Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -41,10 +46,9 @@ public class ProfileViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-//        TerritoryMap map = TerritoryMap.maps[PlayersList.getThisPlayer().getMapIndex()];
-//        this.myMap = map.getAnchorPane();
-//        this.myMap.setVisible(true);
-
-        this.informationLabel.setText(PlayersList.getThisPlayer().toString());
+        arnoLabel.setText("speed : 4\nhealth : 200\ndamage : 50\nlevel require : 4\nspace : 1");
+        connorLabel.setText("speed : 3.5\nhealth : 250\ndamage : 600\nlevel require : 3\nspace : 1");
+        jacobLabel.setText("speed : 5\nhealth : 180\ndamage : 50\nlevel require : 2\nspace : 1");
+        bearLabel.setText("speed : 2\nhealth : 400\ndamage : 25\nlevel require : 1\nspace : 3");
     }
 }

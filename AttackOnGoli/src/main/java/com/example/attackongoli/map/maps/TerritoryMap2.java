@@ -11,6 +11,7 @@ public class TerritoryMap2 extends TerritoryMap {
     Scene scene;
     public TerritoryMap2(){
 
+        this.clanImage = new ImageView(GameLauncher.class.getResource("map2.png").toString());
         this.townHall = new ImageView(GameLauncher.class.getResource("townhall.png").toString());
 
         mapImage.setFitHeight(630);

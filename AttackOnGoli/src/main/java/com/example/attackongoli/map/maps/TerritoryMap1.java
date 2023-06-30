@@ -13,6 +13,7 @@ public class TerritoryMap1 extends TerritoryMap {
 
     public TerritoryMap1() {
 
+        this.clanImage = new ImageView(GameLauncher.class.getResource("map1.png").toString());
         this.townHall = new ImageView(GameLauncher.class.getResource("townhall.png").toString());
 
         mapImage.setFitHeight(630);

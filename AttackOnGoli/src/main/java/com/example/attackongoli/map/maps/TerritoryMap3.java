@@ -11,6 +11,7 @@ public class TerritoryMap3 extends TerritoryMap {
     Scene scene;
     public TerritoryMap3(){
 
+        this.clanImage = new ImageView(GameLauncher.class.getResource("map3.png").toString());
         this.townHall = new ImageView(GameLauncher.class.getResource("townhall.png").toString());
 
 
