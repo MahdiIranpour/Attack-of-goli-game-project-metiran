@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="501.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.ChooseMapManuController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../542681.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="TextLabel" layoutX="318.0" layoutY="7.0" prefHeight="96.0" prefWidth="550.0" text="Choose your Terriorty map">
+         <font>
+            <Font name="Castellar" size="27.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="133.0" fitWidth="215.0" layoutX="334.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../map1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="593.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../map2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="333.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../map3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="593.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../map4.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="mapNumberField" layoutX="333.0" layoutY="433.0" prefHeight="45.0" prefWidth="186.0" promptText="Enter map number" style="-fx-background-color: dark; -fx-border-color: red;">
+         <font>
+            <Font name="Castellar" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="319.0" layoutY="121.0" prefHeight="18.0" prefWidth="7.0" text="1">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <Label layoutX="580.0" layoutY="123.0" text="2">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <Label layoutX="319.0" layoutY="289.0" text="3">
+         <font>
+            <Font size="55.0" />
+         </font>
+      </Label>
+      <Label layoutX="579.0" layoutY="300.0" text="4">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <Button fx:id="okButton" layoutX="533.0" layoutY="433.0" mnemonicParsing="false" onAction="#onOkButton" prefHeight="46.0" prefWidth="74.0" style="-fx-background-color: silver; -fx-border-color: black; -fx-border-radius: 5;" text="OK">
+         <font>
+            <Font name="Castellar" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

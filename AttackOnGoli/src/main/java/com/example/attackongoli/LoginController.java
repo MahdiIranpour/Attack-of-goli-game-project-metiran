@@ -26,11 +26,14 @@ public class LoginController {
     @FXML
     private TextField userNameField;
 
+    private static String username;
+    private static String password;
+
     @FXML
     void OnEnterButtonClicked(ActionEvent event) throws IOException {
 
-        String username = userNameField.getText();
-        String password = passwordField.getText();
+        username = userNameField.getText();
+        password = passwordField.getText();
 
         if (PlayersList.isLoggedIn(username, password)) {
 
@@ -42,7 +45,7 @@ public class LoginController {
 
         } else {
 
-            Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("game-menu.fxml")));
+            Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("choose-map-menu.fxml")));
             Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(parent);
             stg.setScene(scene);
@@ -50,4 +53,11 @@ public class LoginController {
         }
     }
 
+    public static String getUsername() {
+        return username;
+    }
+
+    public static String getPassword() {
+        return password;
+    }
 }

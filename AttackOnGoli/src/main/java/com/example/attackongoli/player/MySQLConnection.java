@@ -23,6 +23,8 @@ public class MySQLConnection {
         } catch (Exception ex) {
 
             System.out.println("Error in Connecting to Data Base!\n\tPlease Check Your Connection.");
+
+            return false;
         }
 
         return true;

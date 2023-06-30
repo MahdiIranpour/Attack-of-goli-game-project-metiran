@@ -5,16 +5,16 @@ public class Player {
     private final String username;
     private final String password;
     private int level;
-    private int map;
+    private int mapIndex;
     private int lose = 0;
     private int win = 0;
 
-    public Player(String username, String password, int level, int map){
+    public Player(String username, String password, int level, int mapIndex, int lose, int win) {
 
         this.username = username;
         this.password = password;
         this.level = level;
-        this.map = map;
+        this.mapIndex = mapIndex;
     }
 
     public String getUsername() {
@@ -29,12 +29,12 @@ public class Player {
         return level;
     }
 
-    public int getMap() {
-        return map;
+    public int getMapIndex() {
+        return mapIndex;
     }
 
-    public void setMap(int map) {
-        this.map = map;
+    public void setMapIndex(int mapIndex) {
+        this.mapIndex = mapIndex;
     }
 
     public void setLevel(int level) {
@@ -55,5 +55,14 @@ public class Player {
 
     public void setWin(int win) {
         this.win = win;
+    }
+
+    @Override
+    public String toString() {
+        return  "username : " + username + "\n" +
+                "level : " + level + "\n" +
+                "map : " + mapIndex + "\n"
+                + "lose : " + lose + "\n"
+                + "win : " + win;
     }
 }

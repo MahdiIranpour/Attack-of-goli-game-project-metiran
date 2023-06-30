@@ -12,12 +12,13 @@ public class PlayersDataBase {
         try {
 
             String sqlCmd = String.format
-                    ("INSERT INTO players (level,username,password,MapIndex,lose,win)values" +
+                    ("INSERT INTO `players`(`level`, `username`, `password`, `mapIndex`, `lose`, `win`) VALUES" +
                             " ('" + player.getLevel() + "','" +
                             player.getUsername() + "','" + player.getPassword() +
-                            "','" + player.getMap() + "','" + player.getLose() + "','" + player.getWin() + "')");
+                            "','" + player.getMapIndex() + "','" + player.getLose() + "','" + player.getWin() + "')");
 
             MySQLConnection sql = new MySQLConnection();
+            sql.executeSQL(sqlCmd);
 
         } catch (Exception ex) {
             System.out.println("Error in Sending The Message To the Data Base!");
@@ -27,7 +28,7 @@ public class PlayersDataBase {
 
     public ArrayList<Player> readPlayers() {
 
-        String sqlCmd = ("SELECT * FROM players");
+        String sqlCmd = ("SELECT `level`, `username`, `password`, `mapIndex`, `lose`, `win` FROM `players`");
 
         MySQLConnection sql = new MySQLConnection();
 
@@ -37,13 +38,17 @@ public class PlayersDataBase {
 
             while (rs.next()) {
 
-                Player player = new Player(rs.getString("username"),
+                Player player = new Player(
+                        rs.getString("username"),
                         rs.getString("password"),
-                        rs.getInt("level"),rs.getInt("mapIndex"));
+                        rs.getInt("level"),
+                        rs.getInt("mapIndex"),
+                        rs.getInt("lose"),
+                        rs.getInt("win"));
 
                 players.add(player);
-
             }
+
             return players;
 
         } catch (Exception ex) {

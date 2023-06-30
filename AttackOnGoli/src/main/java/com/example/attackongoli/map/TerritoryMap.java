@@ -1,34 +1,24 @@
 package com.example.attackongoli.map;
 
+import com.example.attackongoli.GameLauncher;
 import com.example.attackongoli.map.buildings.Building;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+public abstract class TerritoryMap {
 
-public class TerritoryMap implements Initializable {
-
+    public static TerritoryMap [] maps = new TerritoryMap[4];
     private final Building[] buildings = new Building[10];
-    private final Image image = new Image("MapArena.png");
-    private final ImageView mapImage = new ImageView(image);
+    protected final ImageView mapImage = new ImageView(GameLauncher.class.getResource("MapArena.jpg").toString());
+    protected final AnchorPane anchorPane = new AnchorPane();
 
-    private final AnchorPane anchorPane = new AnchorPane();
-    private Scene scene;
+    protected ImageView archerTower = new ImageView(GameLauncher.class.getResource("pngkey.com-water-tower-png-1114296.png").toString());
+    protected ImageView cannon = new ImageView(GameLauncher.class.getResource("cannon.png").toString());
+    protected ImageView townHall;
+    protected ImageView wizardTower  = new ImageView(GameLauncher.class.getResource("Wizard_Tower.png").toString());
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        anchorPane.getChildren().add(mapImage);
-        scene = new Scene(anchorPane, 960, 600);
-    }
-
-    public void setMapScene(Stage stage){
-
-        stage.setScene(scene);
+    public AnchorPane getAnchorPane() {
+        return anchorPane;
     }
 }

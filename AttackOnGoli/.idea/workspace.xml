@@ -5,10 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ac18f5-7813-4c93-93b1-f5ba5320a03b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/thumb-1920-1077466.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/ChooseMapManuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/maps/TerritoryMap1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/maps/TerritoryMap2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/maps/TerritoryMap3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/maps/TerritoryMap4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/ProfileViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/1703614.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/542681.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/Wizard_Tower.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/cannon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/choose-map-menu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/pngkey.com-water-tower-png-1114296.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/pngwing.com.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/profile-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/map1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/map2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/map3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/map4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/GameLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/GameLauncher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/GameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/TerritoryMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/TerritoryMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/MySQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/MySQLConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/PlayersDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/PlayersDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/PlayersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/player/PlayersList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Buildershut.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/Buildershut.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Cannon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MapArena.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/MapArena.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/game-menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/game-menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/townhall.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/townhall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/treashury.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/treashury.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +49,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -71,6 +101,9 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.attackongoli" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.attackongoli.map.maps" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="GameLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -78,7 +111,7 @@
       <module name="AttackOnGoli" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.attackongoli.*" />
+          <option name="PATTERN" value="com.example.attackongoli.player.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,7 +149,16 @@
       <workItem from="1687977008674" duration="692000" />
       <workItem from="1688022937398" duration="458000" />
       <workItem from="1688023427735" duration="25000" />
-      <workItem from="1688023726515" duration="951000" />
+      <workItem from="1688023726515" duration="1347000" />
+      <workItem from="1688025102940" duration="320000" />
+      <workItem from="1688025787777" duration="72000" />
+      <workItem from="1688027402452" duration="21000" />
+      <workItem from="1688028428930" duration="3248000" />
+      <workItem from="1688033348742" duration="2189000" />
+      <workItem from="1688036215603" duration="2162000" />
+      <workItem from="1688117079368" duration="6323000" />
+      <workItem from="1688123722596" duration="3153000" />
+      <workItem from="1688127412177" duration="223000" />
     </task>
     <task id="LOCAL-00001" summary="DefenseBuilding added to the log">
       <created>1687864434784</created>
@@ -167,7 +209,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687967981252</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Game menu added to the log">
+      <created>1688024740492</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688024740492</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Enter button set as default button">
+      <created>1688025036102</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1688025036102</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +246,9 @@
     <MESSAGE value="BuilderHut ang Treasury and TownHall added to the log" />
     <MESSAGE value="Start menu added to the log" />
     <MESSAGE value="Database classes added to the log" />
-    <option name="LAST_COMMIT_MESSAGE" value="Database classes added to the log" />
+    <MESSAGE value="Game menu added to the log" />
+    <MESSAGE value="Enter button set as default button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enter button set as default button" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

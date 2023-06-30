@@ -1,21 +1,17 @@
 package com.example.attackongoli.player;
 
-import javafx.fxml.Initializable;
-
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.ResourceBundle;
 
-public class PlayersList implements Initializable {
+public class PlayersList {
 
     public static ArrayList<Player> players;
-    private final PlayersDataBase dataBase = new PlayersDataBase();
+    private static final PlayersDataBase dataBase = new PlayersDataBase();
     private static Player thisPlayer;
 
     public static boolean isLoggedIn(String username, String password) {
 
-        if (players != null) {
+        players = dataBase.readPlayers();
 
             for (Player player : players) {
 
@@ -25,17 +21,15 @@ public class PlayersList implements Initializable {
                     return true;
                 }
             }
-        }
 
         return false;
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        players = dataBase.readPlayers();
+    public static Player getThisPlayer() {
+        return thisPlayer;
     }
 
-    public Player getThisPlayer() {
-        return thisPlayer;
+    public static void setThisPlayer(Player thisPlayer) {
+        PlayersList.thisPlayer = thisPlayer;
     }
 }
