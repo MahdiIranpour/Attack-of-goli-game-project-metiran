@@ -38,7 +38,7 @@
          <Cursor fx:constant="N_RESIZE" />
       </cursor>
    </TextField>
-   <Button fx:id="enterButton" defaultButton="true" ellipsisString="" graphicTextGap="6.0" layoutX="419.0" layoutY="380.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#OnEnterButtonClicked" prefHeight="36.0" prefWidth="91.0" style="-fx-border-color: black; -fx-background-color: #253720; -fx-border-radius: 3;" text="Enter" textAlignment="CENTER" textFill="#050505" textOverrun="CLIP">
+   <Button fx:id="enterButton" ellipsisString="" graphicTextGap="6.0" layoutX="419.0" layoutY="380.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#OnEnterButtonClicked" prefHeight="36.0" prefWidth="91.0" style="-fx-border-color: black; -fx-background-color: #253720; -fx-border-radius: 3;" text="Enter" textAlignment="CENTER" textFill="#050505" textOverrun="CLIP">
       <font>
          <Font name="Castellar" size="15.0" />
       </font>

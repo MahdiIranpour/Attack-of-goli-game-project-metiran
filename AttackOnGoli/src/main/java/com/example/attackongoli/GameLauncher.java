@@ -16,13 +16,9 @@ public class GameLauncher extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-/*
- new TerritoryMap1().setMapScene(stage);
- Media media = new Media("com/example/attackongoli/Entrance.mp3");
- MediaPlayer mediaPlayer = new MediaPlayer(media);
- mediaPlayer.play();
-*/
 
+//        AudioClip media =  new AudioClip("E:/Dars o zendegi/Java/final-project-game-metiran/AttackOnGoli/src/main/resources/com/example/attackongoli/Entrance.mp3");
+//        media.play(20);
 
         TerritoryMap.maps[0] = new TerritoryMap1();
         TerritoryMap.maps[1] = new TerritoryMap2();
@@ -31,7 +27,7 @@ public class GameLauncher extends Application {
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(GameLauncher.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),960,600);
+        Scene scene = new Scene(fxmlLoader.load(), 960, 600);
         stage.setTitle("Attack On Goli");
         stage.setScene(scene);
         stage.show();
