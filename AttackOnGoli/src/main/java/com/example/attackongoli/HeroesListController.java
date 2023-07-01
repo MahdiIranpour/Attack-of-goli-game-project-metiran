@@ -47,7 +47,7 @@ public class HeroesListController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         arnoLabel.setText("speed : 4\nhealth : 200\ndamage : 50\nlevel require : 4\nspace : 1");
-        connorLabel.setText("speed : 3.5\nhealth : 250\ndamage : 600\nlevel require : 3\nspace : 1");
+        connorLabel.setText("speed : 3\nhealth : 250\ndamage : 60\nlevel require : 3\nspace : 1");
         jacobLabel.setText("speed : 5\nhealth : 180\ndamage : 50\nlevel require : 2\nspace : 1");
         bearLabel.setText("speed : 2\nhealth : 400\ndamage : 25\nlevel require : 1\nspace : 3");
     }

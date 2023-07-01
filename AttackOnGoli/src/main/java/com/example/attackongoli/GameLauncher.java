@@ -13,9 +13,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class GameLauncher extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
-//        new TerritoryMap1().setMapScene(stage);
+/*
+ new TerritoryMap1().setMapScene(stage);
+ Media media = new Media("com/example/attackongoli/Entrance.mp3");
+ MediaPlayer mediaPlayer = new MediaPlayer(media);
+ mediaPlayer.play();
+*/
+
 
         TerritoryMap.maps[0] = new TerritoryMap1();
         TerritoryMap.maps[1] = new TerritoryMap2();
@@ -29,6 +36,7 @@ public class GameLauncher extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
 
     public static void main(String[] args) {
         launch();

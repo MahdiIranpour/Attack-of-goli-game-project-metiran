@@ -28,8 +28,13 @@ public class GameMenuController {
     private Button herosButton;
 
     @FXML
-    void onAttackButtonClicked(MouseEvent event) {
+    void onAttackButtonClicked(MouseEvent event) throws IOException {
 
+        Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("attack-menu.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

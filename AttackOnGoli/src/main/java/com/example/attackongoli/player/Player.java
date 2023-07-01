@@ -59,10 +59,9 @@ public class Player {
 
     @Override
     public String toString() {
-        return  "username : " + username + "\n" +
-                "level : " + level + "\n" +
-                "map : " + mapIndex + "\n"
-                + "lose : " + lose + "\n"
+        return  "username : " + username + "\n\n" +
+                "level : " + level + "\n\n"
+                + "lose : " + lose + "\n\n"
                 + "win : " + win;
     }
 }

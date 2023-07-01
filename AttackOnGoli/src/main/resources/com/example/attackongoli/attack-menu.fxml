@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="495.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.AttackMenuController">
+   <children>
+      <ImageView fitHeight="607.0" fitWidth="906.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../1703626.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mapImage" fitHeight="361.0" fitWidth="589.0" layoutX="281.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="arnoButton" layoutX="275.0" layoutY="407.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="131.0" style="-fx-background-color: dark; -fx-border-color: red;">
+         <graphic>
+            <ImageView fitHeight="79.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Arno.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="bearButton" layoutX="735.0" layoutY="407.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="131.0" style="-fx-background-color: dark; -fx-border-color: red;">
+         <graphic>
+            <ImageView fitHeight="79.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../bear.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="connorButton" layoutX="581.0" layoutY="407.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="131.0" style="-fx-border-color: red; -fx-background-color: dark;">
+         <graphic>
+            <ImageView fitHeight="79.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Attacking_Conner.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="jacobButton" layoutX="428.0" layoutY="407.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="74.0" style="-fx-background-color: dark; -fx-border-color: red;">
+         <graphic>
+            <ImageView fitHeight="78.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Attacking_Cyndicate.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="nextButton" layoutX="181.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#onNext" prefHeight="55.0" prefWidth="83.0" style="-fx-border-color: black; -fx-background-color: dark; -fx-border-radius: 2;" text="next">
+         <font>
+            <Font name="Castellar" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="backButton" layoutX="181.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#onBack" prefHeight="55.0" prefWidth="83.0" style="-fx-border-color: black; -fx-background-color: dark; -fx-border-radius: 2;" text="back">
+         <font>
+            <Font name="Castellar" size="18.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="30.0" layoutY="296.0" stroke="BLACK" strokeType="INSIDE" width="200.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.5378787589795662" startY="0.5492424061804106">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color opacity="0.8700000047683716" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label fx:id="enemyInfos" layoutX="40.0" layoutY="310.0" textFill="WHITE">
+         <font>
+            <Font name="Castellar" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
