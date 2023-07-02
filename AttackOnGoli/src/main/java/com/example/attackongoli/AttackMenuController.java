@@ -2,6 +2,7 @@ package com.example.attackongoli;
 
 import com.example.attackongoli.map.TerritoryMap;
 import com.example.attackongoli.player.PlayersList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,6 +23,10 @@ import java.util.ResourceBundle;
 public class AttackMenuController implements Initializable {
 
     private int playerIndex;
+
+
+    @FXML
+    private Button attackButton;
 
     @FXML
     private Button arnoButton;
@@ -70,6 +75,18 @@ public class AttackMenuController implements Initializable {
         enemyInfos.setText(PlayersList.players.get(playerIndex).toString());
     }
 
+    @FXML
+    void onAttackButton(ActionEvent event) throws IOException {
+
+        AttackToEnemyController.setEnemy(PlayersList.players.get(playerIndex));
+
+        Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("attack-to-enemy.fxml")));
+        Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(parent);
+        stg.setScene(scene);
+        stg.show();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -91,5 +108,6 @@ public class AttackMenuController implements Initializable {
 
         mapImage.setImage(TerritoryMap.maps[PlayersList.players.get(playerIndex).getMapIndex()].getClanImage().getImage());
         enemyInfos.setText(PlayersList.players.get(playerIndex).toString());
+
     }
 }

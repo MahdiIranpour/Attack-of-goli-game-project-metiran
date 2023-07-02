@@ -6,14 +6,14 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="495.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.AttackMenuController">
+<AnchorPane prefHeight="495.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.AttackMenuController">
    <children>
       <ImageView fitHeight="607.0" fitWidth="906.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../1703626.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="mapImage" fitHeight="361.0" fitWidth="589.0" layoutX="281.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="mapImage" fitHeight="361.0" fitWidth="579.0" layoutX="291.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="arnoButton" layoutX="275.0" layoutY="407.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="131.0" style="-fx-background-color: dark; -fx-border-color: red;">
          <graphic>
             <ImageView fitHeight="79.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true">
@@ -50,17 +50,17 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="nextButton" layoutX="181.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#onNext" prefHeight="55.0" prefWidth="83.0" style="-fx-border-color: black; -fx-background-color: dark; -fx-border-radius: 2;" text="next">
+      <Button fx:id="nextButton" layoutX="181.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#onNext" prefHeight="55.0" prefWidth="83.0" style="-fx-border-color: black; -fx-background-color: dark; -fx-border-radius: 2;" text="next" textFill="RED">
          <font>
             <Font name="Castellar" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="backButton" layoutX="181.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#onBack" prefHeight="55.0" prefWidth="83.0" style="-fx-border-color: black; -fx-background-color: dark; -fx-border-radius: 2;" text="back">
+      <Button fx:id="backButton" layoutX="181.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#onBack" prefHeight="55.0" prefWidth="83.0" style="-fx-border-color: black; -fx-background-color: dark; -fx-border-radius: 2;" text="back" textFill="RED">
          <font>
             <Font name="Castellar" size="18.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="30.0" layoutY="296.0" stroke="BLACK" strokeType="INSIDE" width="200.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="30.0" layoutY="296.0" stroke="BLACK" strokeType="INSIDE" width="235.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.5378787589795662" startY="0.5492424061804106">
                <stops>
@@ -78,10 +78,14 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Label fx:id="enemyInfos" layoutX="40.0" layoutY="310.0" textFill="WHITE">
+      <Label fx:id="enemyInfos" layoutX="37.0" layoutY="310.0" textFill="WHITE">
          <font>
             <Font name="Castellar" size="18.0" />
          </font>
       </Label>
+      <Button fx:id="attackButton" defaultButton="true" ellipsisString="" layoutX="165.0" layoutY="157.0" mnemonicParsing="false" onAction="#onAttackButton" prefHeight="55.0" prefWidth="114.0" style="-fx-border-color: black; -fx-background-color: dark; -fx-border-radius: 2;" text="attack" textFill="RED" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="Castellar" size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:id="pain" prefHeight="498.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackongoli.AttackToEnemyController">
+   <children>
+      <ImageView fitHeight="581.0" fitWidth="746.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MapArena.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="arnoButton" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#onArno" text="arno" />
+      <Button fx:id="jacobButton" layoutX="82.0" layoutY="60.0" mnemonicParsing="false" onAction="#onJacob" text="Jacob" />
+      <Button fx:id="connorButton" layoutX="14.0" layoutY="60.0" mnemonicParsing="false" onAction="#onConnor" text="Connor" />
+      <Button fx:id="bearButton" layoutX="65.0" layoutY="24.0" mnemonicParsing="false" onAction="#onBear" text="Bear" />
+   </children>
+</AnchorPane>

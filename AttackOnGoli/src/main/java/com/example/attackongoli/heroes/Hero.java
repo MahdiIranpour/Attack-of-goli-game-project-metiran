@@ -3,7 +3,7 @@ package com.example.attackongoli.heroes;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 
-public class Hero extends Node {
+public class Hero extends Node{
 
     protected int health;
     protected int damage;
