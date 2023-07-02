@@ -1,16 +1,15 @@
 package com.example.attackongoli.heroes;
 
-import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 
-public class Hero extends Node{
+public class Hero extends ImageView{
 
     protected int health;
     protected int damage;
     protected int speed;
     protected int space;
     protected int levelRequire;
-    protected ImageView image;
+//    protected ImageView image;
     public int getHealth() {
         return health;
     }

@@ -36,11 +36,8 @@ public class LoginController implements Initializable {
     @FXML
     void OnEnterButtonClicked(ActionEvent event) throws IOException {
 
-//        username = userNameField.getText();
-//        password = passwordField.getText();
-
-        username = "metiran";
-        password = "metiran";
+        username = userNameField.getText();
+        password = passwordField.getText();
 
         if (PlayersList.isLoggedIn(username, password)) {
 
@@ -79,8 +76,13 @@ public class LoginController implements Initializable {
 
         passwordField.setOnKeyPressed(event -> {
 
-            username = userNameField.getText();
-            password = passwordField.getText();
+//            username = userNameField.getText();
+//            password = passwordField.getText();
+
+
+            username = "metiran";
+            password = "metiran";
+
 
             if (event.getCode() == KeyCode.ENTER) {
 

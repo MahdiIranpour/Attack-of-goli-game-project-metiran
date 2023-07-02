@@ -1,12 +1,11 @@
 package com.example.attackongoli.heroes.assassins;
 
-import com.example.attackongoli.GameLauncher;
 import com.example.attackongoli.heroes.Hero;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 
 public class Connor extends Hero {
 
-    public Connor(int x, int y) {
+    public Connor() {
 
         this.health = 250;
         this.damage = 60;
@@ -14,6 +13,7 @@ public class Connor extends Hero {
         this.space = 1;
         this.speed = 3;
 
-        this.image = new ImageView(GameLauncher.class.getResource("Connor.png").toString());
+//        this.image = new ImageView(GameLauncher.class.getResource("Attacking_Conner.png").toString());
+        this.setImage(new Image("Arno.png"));
     }
 }

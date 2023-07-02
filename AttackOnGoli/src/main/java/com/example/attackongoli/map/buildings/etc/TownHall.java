@@ -10,11 +10,11 @@ public class TownHall extends Building {
     public TownHall(){
 
         this.category = Category.ETC;
-        this.health = 100;
+        this.health = 350;
 
         this.image = new ImageView(GameLauncher.class.getResource("townhall.png").toString());
 
-        this.X = 387;
-        this.Y = 198;
+        this.X = 317;
+        this.Y = 138;
     }
 }

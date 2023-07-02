@@ -1,8 +1,6 @@
 package com.example.attackongoli.map.buildings.defenseBuilds;
 
-import com.example.attackongoli.GameLauncher;
 import com.example.attackongoli.map.buildings.Category;
-import javafx.scene.image.ImageView;
 
 public class WizardTower extends DefenseBuilding {
 
@@ -14,9 +12,9 @@ public class WizardTower extends DefenseBuilding {
         this.range = 30;
         this.category = Category.DEFENSE;
 
-        this.X = 528;
-        this.Y = 292;
-
-        this.image = new ImageView(GameLauncher.class.getResource("Wizard_Tower.png").toString());
+//        this.X = 458;
+//        this.Y = 222;
+//
+//        this.image = new ImageView(GameLauncher.class.getResource("Wizard_Tower.png").toString());
     }
 }

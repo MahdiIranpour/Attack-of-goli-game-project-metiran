@@ -1,5 +1,11 @@
 package com.example.attackongoli;
 
+import com.example.attackongoli.exceptions.ThisHeroIsDead;
+import com.example.attackongoli.heroes.Hero;
+import com.example.attackongoli.heroes.assassins.Arno;
+import com.example.attackongoli.heroes.assassins.Bear;
+import com.example.attackongoli.heroes.assassins.Connor;
+import com.example.attackongoli.heroes.assassins.Jacob;
 import com.example.attackongoli.map.buildings.Building;
 import com.example.attackongoli.map.buildings.defenseBuilds.ArcherTower;
 import com.example.attackongoli.map.buildings.defenseBuilds.Cannon;
@@ -7,16 +13,20 @@ import com.example.attackongoli.map.buildings.defenseBuilds.WizardTower;
 import com.example.attackongoli.map.buildings.etc.TownHall;
 import com.example.attackongoli.player.Player;
 import com.example.attackongoli.player.PlayersList;
+import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class AttackToEnemyController implements Initializable {
 
@@ -38,7 +48,12 @@ public class AttackToEnemyController implements Initializable {
     private AnchorPane pain;
 
 
-    Building[] buildings = new Building[4];
+    private BiMap<ImageView, Building> buildingsMap = new BiMap<>();
+    private Map<ImageView, Hero> heroesMap = new HashMap<>();
+    private ArrayList<Building> buildingsArrayList = new ArrayList<>();
+
+
+    private Building[] buildings = new Building[4];
 
     ImageView[] buildingsImageViews;
 
@@ -58,7 +73,6 @@ public class AttackToEnemyController implements Initializable {
     private ImageView cannon = new ImageView(Objects.requireNonNull(GameLauncher.class.getResource
             ("cannon.png")).toString());
 
-
     public static Player getEnemy() {
         return enemy;
     }
@@ -66,6 +80,8 @@ public class AttackToEnemyController implements Initializable {
     public static void setEnemy(Player enemy) {
         AttackToEnemyController.enemy = enemy;
     }
+
+//----------------------------------------------------------------------------------------
 
     @FXML
     void onArno(ActionEvent event) {
@@ -78,8 +94,12 @@ public class AttackToEnemyController implements Initializable {
         pain.getChildren().add(arno);
         DraggableMaker.makeDraggable(arno);
 
-        arno.setOnMouseReleased(e -> DraggableMaker.makeUnDraggable(arno));
+        heroesMap.put(arno, new Arno());
+
+        HeroesOnMouseReleased(arno);
     }
+
+//----------------------------------------------------------------------------------------
 
     @FXML
     void onBear(ActionEvent event) {
@@ -92,8 +112,11 @@ public class AttackToEnemyController implements Initializable {
         pain.getChildren().add(bear);
         DraggableMaker.makeDraggable(bear);
 
-        bear.setOnMouseReleased(e -> DraggableMaker.makeUnDraggable(bear));
+        heroesMap.put(bear, new Bear());
+
+        HeroesOnMouseReleased(bear);
     }
+//----------------------------------------------------------------------------------------
 
     @FXML
     void onConnor(ActionEvent event) {
@@ -106,8 +129,11 @@ public class AttackToEnemyController implements Initializable {
         pain.getChildren().add(connor);
         DraggableMaker.makeDraggable(connor);
 
-        connor.setOnMouseReleased(e -> DraggableMaker.makeUnDraggable(connor));
+        heroesMap.put(connor, new Connor());
+
+        HeroesOnMouseReleased(connor);
     }
+//----------------------------------------------------------------------------------------
 
     @FXML
     void onJacob(ActionEvent event) {
@@ -120,8 +146,11 @@ public class AttackToEnemyController implements Initializable {
         pain.getChildren().add(jacob);
         DraggableMaker.makeDraggable(jacob);
 
-        jacob.setOnMouseReleased(e -> DraggableMaker.makeUnDraggable(jacob));
+        heroesMap.put(jacob, new Jacob());
+
+        HeroesOnMouseReleased(jacob);
     }
+//----------------------------------------------------------------------------------------
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -163,7 +192,6 @@ public class AttackToEnemyController implements Initializable {
         townHall.setX(387);
         townHall.setY(198);
 
-
         buildings[0] = new ArcherTower();
         buildings[1] = new WizardTower();
         buildings[2] = new Cannon();
@@ -173,19 +201,202 @@ public class AttackToEnemyController implements Initializable {
             addNewBuilding(buildings[i]);
         }
     }
+//----------------------------------------------------------------------------------------
 
     private void addNewBuilding(Building building) {
 
-        Building thisBuilding = building;
-
-        ImageView thisBuildingView = new ImageView(thisBuilding.getImageView().getImage());
+        ImageView thisBuildingView;
+        thisBuildingView = new ImageView(building.getImageView().getImage());
 
         thisBuildingView.setFitWidth(100);
         thisBuildingView.setFitHeight(100);
-        thisBuildingView.setLayoutX(thisBuilding.getX());
-        thisBuildingView.setLayoutY(thisBuilding.getY());
+        thisBuildingView.setLayoutX(building.getX());
+        thisBuildingView.setLayoutY(building.getY());
 
         pain.getChildren().add(thisBuildingView);
 
+        buildingsMap.put(thisBuildingView, building);
+        buildingsArrayList.add(building);
+    }
+
+    //----------------------------------------------------------------------------------------
+    private void HeroesOnMouseReleased(ImageView theHero) {
+
+        theHero.setOnMouseReleased(e -> {
+
+            DraggableMaker.makeUnDraggable(theHero);
+
+            Platform.runLater(() -> {
+
+                for (Building build : buildingsArrayList) {
+
+                    startTransition(theHero, build);
+
+
+                    try {
+
+                        buildingRangeThread(theHero, build);
+                        heroRangeThread(theHero, build);
+
+                    } catch (RuntimeException ex) {
+                        heroesMap.remove(theHero);
+                        break;
+                    }
+
+                }
+
+            });
+        });
+    }
+
+    private void heroRangeThread(ImageView theHero, Building build) {
+
+        Platform.runLater(() -> {
+            try {
+                setDamages(build, theHero);
+            } catch (ThisHeroIsDead e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
+
+    private void buildingRangeThread(ImageView theHero, Building build) {
+
+        Platform.runLater(() -> {
+            try {
+                setBuildingDamage(build, theHero);
+            } catch (ThisHeroIsDead e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
+
+//=============================================================================================
+
+    private void setDamages(Building build, ImageView theHero) throws ThisHeroIsDead {
+
+        while (build.getHealth() > 0 && heroesMap.get(theHero).getHealth() > 0) {
+
+//            if (Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX()) <= 10) {
+
+            int buildHealth = build.getHealth();
+            buildHealth -= heroesMap.get(theHero).getDamage();
+            build.setHealth(buildHealth);
+//            }
+        }
+
+        if (build.getHealth() <= 0) {
+
+            pain.getChildren().remove(buildingsMap.getKey(build));
+            buildingsArrayList.remove(build);
+
+        } else if (heroesMap.get(theHero).getHealth() <= 0) {
+
+            pain.getChildren().remove(theHero);
+
+            throw new ThisHeroIsDead();
+        }
+    }
+
+//==============================================================================================
+
+    private void setBuildingDamage(Building build, ImageView theHero) throws ThisHeroIsDead {
+
+        if (build instanceof ArcherTower archerTower) {
+
+//            while (build.getHealth() > 0 && heroesMap.get(theHero).getHealth() > 0) {
+
+//                if (archerTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())
+//                        && archerTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())) {
+
+            int heroHealth = heroesMap.get(theHero).getHealth();
+            heroHealth -= archerTower.getImpactPower();
+            heroesMap.get(theHero).setHealth(heroHealth);
+//                }
+//            }
+            if (heroesMap.get(theHero).getHealth() <= 0) {
+
+                pain.getChildren().remove(theHero);
+                throw new ThisHeroIsDead();
+
+            } else if (build.getHealth() <= 0) {
+
+                pain.getChildren().remove(buildingsMap.getKey(build));
+                buildingsArrayList.remove(build);
+            }
+
+        } else if (build instanceof WizardTower wizardTower) {
+
+//            while (heroesMap.get(theHero).getHealth() > 0) {
+
+//                if (wizardTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())
+//                        && wizardTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())) {
+
+            int heroHealth = heroesMap.get(theHero).getHealth();
+            heroHealth -= wizardTower.getImpactPower();
+            heroesMap.get(theHero).setHealth(heroHealth);
+//                }
+//            }
+
+        } else if (build instanceof Cannon cannon) {
+
+//            while (heroesMap.get(theHero).getHealth() > 0) {
+
+//                if (cannon.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())
+//                        && cannon.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())) {
+
+            int heroHealth = heroesMap.get(theHero).getHealth();
+            heroHealth -= cannon.getImpactPower();
+            heroesMap.get(theHero).setHealth(heroHealth);
+//                }
+//            }
+        }
+    }
+
+    private void startTransition(ImageView theHero, Building build) {
+
+        Platform.runLater(() -> {
+
+            TranslateTransition transition = new TranslateTransition();
+
+            transition.setNode(theHero);
+            transition.setDuration(Duration.millis((double) 10000 / heroesMap.get(theHero).getSpeed()));
+
+            transition.setByX(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX());
+            transition.setByY(buildingsMap.getKey(build).getLayoutY() - theHero.getLayoutY());
+
+            ImageView t = buildingsMap.getKey(build);
+
+            transition.play();
+        });
+
+    }
+}
+
+//==============================================================================================
+
+class BiMap<K, V> {
+    private final ObservableMap<K, V> map = FXCollections.observableHashMap();
+    private final ObservableMap<V, K> inverseMap = FXCollections.observableHashMap();
+
+    public void put(K key, V value) {
+        map.put(key, value);
+        inverseMap.put(value, key);
+    }
+
+    public ObservableMap<K, V> getMap() {
+        return map;
+    }
+
+    public ObservableMap<V, K> getInverseMap() {
+        return inverseMap;
+    }
+
+    public V getValue(K key) {
+        return map.get(key);
+    }
+
+    public K getKey(V value) {
+        return inverseMap.get(value);
     }
 }
