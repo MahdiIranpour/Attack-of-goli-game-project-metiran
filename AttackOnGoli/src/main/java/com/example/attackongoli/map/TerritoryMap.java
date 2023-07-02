@@ -15,17 +15,8 @@ import java.util.ResourceBundle;
 
 public abstract class TerritoryMap implements Initializable {
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        buildings[0] = new ArcherTower();
-        buildings[1] = new WizardTower();
-        buildings[2] = new Cannon();
-        buildings[3] = new TownHall();
-    }
-
     public static TerritoryMap[] maps = new TerritoryMap[4];
-    private final Building[] buildings = new Building[4];
+    protected final Building[] buildings = new Building[4];
     protected final ImageView mapImage = new ImageView(GameLauncher.class.getResource("MapArena.jpg").toString());
     protected final AnchorPane anchorPane = new AnchorPane();
     protected ImageView clanImage;
@@ -34,12 +25,24 @@ public abstract class TerritoryMap implements Initializable {
     protected ImageView townHall;
     protected ImageView wizardTower = new ImageView(GameLauncher.class.getResource("Wizard_Tower.png").toString());
 
-
     public AnchorPane getAnchorPane() {
         return anchorPane;
     }
 
     public ImageView getClanImage() {
         return clanImage;
+    }
+
+    public Building[] getBuildings() {
+        return buildings;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        buildings[0] = new ArcherTower();
+        buildings[1] = new WizardTower();
+        buildings[2] = new Cannon();
+        buildings[3] = new TownHall();
     }
 }

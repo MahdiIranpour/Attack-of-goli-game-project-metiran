@@ -22,7 +22,7 @@ public abstract class Building {
         return Y;
     }
 
-    public ImageView getImage() {
+    public ImageView getImageView() {
         return image;
     }
 
