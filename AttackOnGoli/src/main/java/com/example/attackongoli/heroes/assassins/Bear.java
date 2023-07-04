@@ -1,5 +1,6 @@
 package com.example.attackongoli.heroes.assassins;
 
+import com.example.attackongoli.GameLauncher;
 import com.example.attackongoli.heroes.Hero;
 import javafx.scene.image.Image;
 
@@ -14,6 +15,6 @@ public class Bear extends Hero {
         this.speed = 2;
 
 //        this.image = new ImageView(GameLauncher.class.getResource("Cyndicate.png").toString());
-        this.setImage(new Image("Arno.png"));
+        this.setImage(new Image(GameLauncher.class.getResource("Attacking_bear.png").toString()));
     }
 }

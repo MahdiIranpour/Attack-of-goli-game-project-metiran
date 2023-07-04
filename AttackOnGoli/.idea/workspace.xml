@@ -5,23 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72ac18f5-7813-4c93-93b1-f5ba5320a03b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/exceptions/ThisHeroIsDead.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Old thread methods" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/AttackToEnemyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/AttackToEnemyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/heroes/Hero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/heroes/assassins/Arno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/heroes/assassins/Arno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/heroes/assassins/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/heroes/assassins/Bear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/heroes/assassins/Connor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/heroes/assassins/Connor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/heroes/assassins/Jacob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/heroes/assassins/Jacob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/Building.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/defenseBuilds/ArcherTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/defenseBuilds/ArcherTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/defenseBuilds/Cannon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/defenseBuilds/Cannon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/defenseBuilds/DefenseBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/defenseBuilds/DefenseBuilding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/defenseBuilds/WizardTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/defenseBuilds/WizardTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/etc/TownHall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/attackongoli/map/buildings/etc/TownHall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/attack-to-enemy.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/attackongoli/attack-to-enemy.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +152,12 @@
       <workItem from="1688291803991" duration="15000" />
       <workItem from="1688302336324" duration="4495000" />
       <workItem from="1688306842549" duration="18615000" />
-      <workItem from="1688339493914" duration="373000" />
+      <workItem from="1688339493914" duration="3033000" />
+      <workItem from="1688364553573" duration="951000" />
+      <workItem from="1688379784750" duration="3799000" />
+      <workItem from="1688399219436" duration="4528000" />
+      <workItem from="1688404359638" duration="5382000" />
+      <workItem from="1688448437329" duration="2851000" />
     </task>
     <task id="LOCAL-00001" summary="DefenseBuilding added to the log">
       <created>1687864434784</created>
@@ -276,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688282872546</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Temp for test Imageview enxtending">
+      <option name="closed" value="true" />
+      <created>1688339953553</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1688339953553</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +318,8 @@
     <MESSAGE value="DraggableMaker.java added" />
     <MESSAGE value="heroes image added to the proje" />
     <MESSAGE value="buildings added to the attack page" />
-    <option name="LAST_COMMIT_MESSAGE" value="buildings added to the attack page" />
+    <MESSAGE value="Temp for test Imageview enxtending" />
+    <option name="LAST_COMMIT_MESSAGE" value="Temp for test Imageview enxtending" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

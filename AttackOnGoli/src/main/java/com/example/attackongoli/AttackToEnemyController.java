@@ -1,6 +1,6 @@
 package com.example.attackongoli;
 
-import com.example.attackongoli.exceptions.ThisHeroIsDead;
+
 import com.example.attackongoli.heroes.Hero;
 import com.example.attackongoli.heroes.assassins.Arno;
 import com.example.attackongoli.heroes.assassins.Bear;
@@ -9,14 +9,12 @@ import com.example.attackongoli.heroes.assassins.Jacob;
 import com.example.attackongoli.map.buildings.Building;
 import com.example.attackongoli.map.buildings.defenseBuilds.ArcherTower;
 import com.example.attackongoli.map.buildings.defenseBuilds.Cannon;
+import com.example.attackongoli.map.buildings.defenseBuilds.DefenseBuilding;
 import com.example.attackongoli.map.buildings.defenseBuilds.WizardTower;
 import com.example.attackongoli.map.buildings.etc.TownHall;
 import com.example.attackongoli.player.Player;
 import com.example.attackongoli.player.PlayersList;
 import javafx.animation.TranslateTransition;
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,7 +24,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 
 public class AttackToEnemyController implements Initializable {
 
@@ -45,15 +47,14 @@ public class AttackToEnemyController implements Initializable {
     private Button jacobButton;
 
     @FXML
-    private AnchorPane pain;
+    protected AnchorPane pane;
 
+    static AnchorPane pain;
 
-    private BiMap<ImageView, Building> buildingsMap = new BiMap<>();
-    private Map<ImageView, Hero> heroesMap = new HashMap<>();
-    private ArrayList<Building> buildingsArrayList = new ArrayList<>();
+    protected static ArrayList<Building> buildingsArrayList = new ArrayList<>();
+    protected static ArrayList<Hero> heroesArrayList = new ArrayList<>();
 
-
-    private Building[] buildings = new Building[4];
+    protected Building[] buildings = new Building[4];
 
     ImageView[] buildingsImageViews;
 
@@ -86,7 +87,7 @@ public class AttackToEnemyController implements Initializable {
     @FXML
     void onArno(ActionEvent event) {
 
-        ImageView arno = new ImageView(Objects.requireNonNull(GameLauncher.class.getResource("Arno.png")).toString());
+        Arno arno = new Arno();
 
         arno.setFitHeight(89);
         arno.setFitWidth(65);
@@ -94,9 +95,9 @@ public class AttackToEnemyController implements Initializable {
         pain.getChildren().add(arno);
         DraggableMaker.makeDraggable(arno);
 
-        heroesMap.put(arno, new Arno());
+        heroesArrayList.add(arno);
 
-        HeroesOnMouseReleased(arno);
+        addNewHero(arno);
     }
 
 //----------------------------------------------------------------------------------------
@@ -104,7 +105,7 @@ public class AttackToEnemyController implements Initializable {
     @FXML
     void onBear(ActionEvent event) {
 
-        ImageView bear = new ImageView(Objects.requireNonNull(GameLauncher.class.getResource("Attacking_bear.png")).toString());
+        Bear bear = new Bear();
 
         bear.setFitHeight(89);
         bear.setFitWidth(75);
@@ -112,16 +113,16 @@ public class AttackToEnemyController implements Initializable {
         pain.getChildren().add(bear);
         DraggableMaker.makeDraggable(bear);
 
-        heroesMap.put(bear, new Bear());
+        heroesArrayList.add(bear);
 
-        HeroesOnMouseReleased(bear);
+        addNewHero(bear);
     }
 //----------------------------------------------------------------------------------------
 
     @FXML
     void onConnor(ActionEvent event) {
 
-        ImageView connor = new ImageView(Objects.requireNonNull(GameLauncher.class.getResource("Attacking_Conner.png")).toString());
+        Connor connor = new Connor();
 
         connor.setFitHeight(89);
         connor.setFitWidth(75);
@@ -129,16 +130,16 @@ public class AttackToEnemyController implements Initializable {
         pain.getChildren().add(connor);
         DraggableMaker.makeDraggable(connor);
 
-        heroesMap.put(connor, new Connor());
+        heroesArrayList.add(connor);
 
-        HeroesOnMouseReleased(connor);
+        addNewHero(connor);
     }
 //----------------------------------------------------------------------------------------
 
     @FXML
     void onJacob(ActionEvent event) {
 
-        ImageView jacob = new ImageView(Objects.requireNonNull(GameLauncher.class.getResource("Cyndicate.png")).toString());
+        Jacob jacob = new Jacob();
 
         jacob.setFitHeight(95);
         jacob.setFitWidth(65);
@@ -146,14 +147,204 @@ public class AttackToEnemyController implements Initializable {
         pain.getChildren().add(jacob);
         DraggableMaker.makeDraggable(jacob);
 
-        heroesMap.put(jacob, new Jacob());
+        heroesArrayList.add(jacob);
 
-        HeroesOnMouseReleased(jacob);
+        addNewHero(jacob);
     }
-//----------------------------------------------------------------------------------------
+
+
+    //----------------------------------------------------------------------------------------
+
+    //----------------------------------------------------------------------------------------
+    private void addNewBuilding(Building building) {
+
+        building.setLayoutX(building.getX());
+        building.setLayoutY(building.getY());
+
+        pain.getChildren().add(building);
+
+        buildingsArrayList.add(building);
+    }
+
+    Building findClosestBuilding(Hero hero) {
+
+        double closestDistance = Double.MAX_VALUE;
+
+        Building building = buildingsArrayList.get(0);
+
+        for (Building value : buildingsArrayList) {
+
+
+            double distance = Math.sqrt(Math.pow(value.getLayoutX() - hero.getLayoutX(), 2) +
+                    Math.pow(value.getLayoutY() - hero.getLayoutY(), 2));
+
+            if (distance < closestDistance) {
+
+                building = value;
+
+                closestDistance = distance;
+            }
+        }
+
+        return building;
+    }
+
+    private void addNewHero(Hero hero) {
+
+
+        hero.setOnMouseReleased(e -> DraggableMaker.makeUnDraggable(hero));
+
+        for (Building building : buildingsArrayList) {
+
+            HeroThread heroThread = new HeroThread(hero, findClosestBuilding(hero));
+
+            Thread thread = new Thread(heroThread);
+            thread.start();
+
+            try {
+
+                thread.join();
+                System.out.println("join");
+
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+    }
+
+    //----------------------------------------------------------------------------------------
+
+    static class HeroThread implements Runnable {
+
+        private Hero hero;
+        private Building building;
+        private int index = 0;
+
+        public HeroThread(Hero hero, Building building) {
+
+            this.hero = hero;
+            this.building = building;
+        }
+        //----------------------------------------------------------------------------------------
+
+        @Override
+        public void run() {
+
+            startTransition();
+        }
+        //----------------------------------------------------------------------------------------
+
+        private void startTransition() {
+
+            double sourceX = hero.getBoundsInParent().getMinX();
+            double sourceY = hero.getBoundsInParent().getMinY();
+            double targetX = building.getBoundsInParent().getMinX();
+            double targetY = building.getBoundsInParent().getMinY();
+
+            // Calculate the translation distance
+            double translateX = targetX - sourceX;
+            double translateY = targetY - sourceY;
+
+            int duration = (10000 / hero.getSpeed());
+
+            // Create a TranslateTransition for the source ImageView
+            TranslateTransition transition = new TranslateTransition();
+            transition.setNode(hero);
+            transition.setDuration(Duration.millis(duration));
+            transition.setToX(translateX);
+            transition.setToY(translateY);
+            transition.play();
+
+            transition.setOnFinished(actionEvent -> exchangeDamage(hero, building));
+//            try {
+//                sleep(8000);
+//            } catch (InterruptedException e) {
+//                throw new RuntimeException(e);
+//            }
+
+        }
+
+        private void exchangeDamage(Hero hero, Building building) {
+
+            AtomicBoolean isHeroAlive = new AtomicBoolean(true);
+            AtomicBoolean isBuildingAlive = new AtomicBoolean(true);
+
+            System.out.println(hero.getHealth());
+
+            //hero damaging
+            Thread heroDamageThread = new Thread(() -> {
+
+                while (isHeroAlive.get() && isBuildingAlive.get()) {
+
+                    int buildingHealth = building.getHealth();
+                    buildingHealth -= hero.getDamage();
+                    building.setHealth(buildingHealth);
+
+                    if (building.getHealth() <= 0) {
+
+                        isBuildingAlive.set(false);
+//                        notify();
+                        break;
+                    }
+                }
+
+
+            });
+
+            if (building instanceof DefenseBuilding defenseBuilding) {
+
+                Thread buildingDamageThread = new Thread(() -> {
+
+                    while (isHeroAlive.get() && isBuildingAlive.get()) {
+
+                        int heroHealth = hero.getHealth();
+                        heroHealth -= defenseBuilding.getImpactPower();
+                        hero.setHealth(heroHealth);
+
+                        if (hero.getHealth() <= 0) {
+
+                            isHeroAlive.set(false);
+//                            notify();
+                            break;
+                        }
+                    }
+                });
+
+                buildingDamageThread.start();
+
+
+                try {
+
+                    heroDamageThread.join();
+                    buildingDamageThread.join();
+
+
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+
+            if (hero.getHealth() <= 0){
+
+                pain.getChildren().remove(hero);
+                heroesArrayList.remove(hero);
+            }
+            if (building.getHealth() <= 0){
+
+                pain.getChildren().remove(building);
+                buildingsArrayList.remove(building);
+            }
+        }
+
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        pain = pane;
 
         switch (PlayersList.getThisPlayer().getLevel()) {
 
@@ -192,211 +383,12 @@ public class AttackToEnemyController implements Initializable {
         townHall.setX(387);
         townHall.setY(198);
 
-        buildings[0] = new ArcherTower();
-        buildings[1] = new WizardTower();
-        buildings[2] = new Cannon();
-        buildings[3] = new TownHall();
 
-        for (int i = 0; i < 4; i++) {
-            addNewBuilding(buildings[i]);
-        }
-    }
-//----------------------------------------------------------------------------------------
-
-    private void addNewBuilding(Building building) {
-
-        ImageView thisBuildingView;
-        thisBuildingView = new ImageView(building.getImageView().getImage());
-
-        thisBuildingView.setFitWidth(100);
-        thisBuildingView.setFitHeight(100);
-        thisBuildingView.setLayoutX(building.getX());
-        thisBuildingView.setLayoutY(building.getY());
-
-        pain.getChildren().add(thisBuildingView);
-
-        buildingsMap.put(thisBuildingView, building);
-        buildingsArrayList.add(building);
-    }
-
-    //----------------------------------------------------------------------------------------
-    private void HeroesOnMouseReleased(ImageView theHero) {
-
-        theHero.setOnMouseReleased(e -> {
-
-            DraggableMaker.makeUnDraggable(theHero);
-
-            Platform.runLater(() -> {
-
-                for (Building build : buildingsArrayList) {
-
-                    startTransition(theHero, build);
-
-
-                    try {
-
-                        buildingRangeThread(theHero, build);
-                        heroRangeThread(theHero, build);
-
-                    } catch (RuntimeException ex) {
-                        heroesMap.remove(theHero);
-                        break;
-                    }
-
-                }
-
-            });
-        });
-    }
-
-    private void heroRangeThread(ImageView theHero, Building build) {
-
-        Platform.runLater(() -> {
-            try {
-                setDamages(build, theHero);
-            } catch (ThisHeroIsDead e) {
-                throw new RuntimeException(e);
-            }
-        });
-    }
-
-    private void buildingRangeThread(ImageView theHero, Building build) {
-
-        Platform.runLater(() -> {
-            try {
-                setBuildingDamage(build, theHero);
-            } catch (ThisHeroIsDead e) {
-                throw new RuntimeException(e);
-            }
-        });
-    }
-
-//=============================================================================================
-
-    private void setDamages(Building build, ImageView theHero) throws ThisHeroIsDead {
-
-        while (build.getHealth() > 0 && heroesMap.get(theHero).getHealth() > 0) {
-
-//            if (Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX()) <= 10) {
-
-            int buildHealth = build.getHealth();
-            buildHealth -= heroesMap.get(theHero).getDamage();
-            build.setHealth(buildHealth);
-//            }
-        }
-
-        if (build.getHealth() <= 0) {
-
-            pain.getChildren().remove(buildingsMap.getKey(build));
-            buildingsArrayList.remove(build);
-
-        } else if (heroesMap.get(theHero).getHealth() <= 0) {
-
-            pain.getChildren().remove(theHero);
-
-            throw new ThisHeroIsDead();
-        }
-    }
-
-//==============================================================================================
-
-    private void setBuildingDamage(Building build, ImageView theHero) throws ThisHeroIsDead {
-
-        if (build instanceof ArcherTower archerTower) {
-
-//            while (build.getHealth() > 0 && heroesMap.get(theHero).getHealth() > 0) {
-
-//                if (archerTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())
-//                        && archerTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())) {
-
-            int heroHealth = heroesMap.get(theHero).getHealth();
-            heroHealth -= archerTower.getImpactPower();
-            heroesMap.get(theHero).setHealth(heroHealth);
-//                }
-//            }
-            if (heroesMap.get(theHero).getHealth() <= 0) {
-
-                pain.getChildren().remove(theHero);
-                throw new ThisHeroIsDead();
-
-            } else if (build.getHealth() <= 0) {
-
-                pain.getChildren().remove(buildingsMap.getKey(build));
-                buildingsArrayList.remove(build);
-            }
-
-        } else if (build instanceof WizardTower wizardTower) {
-
-//            while (heroesMap.get(theHero).getHealth() > 0) {
-
-//                if (wizardTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())
-//                        && wizardTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())) {
-
-            int heroHealth = heroesMap.get(theHero).getHealth();
-            heroHealth -= wizardTower.getImpactPower();
-            heroesMap.get(theHero).setHealth(heroHealth);
-//                }
-//            }
-
-        } else if (build instanceof Cannon cannon) {
-
-//            while (heroesMap.get(theHero).getHealth() > 0) {
-
-//                if (cannon.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())
-//                        && cannon.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())) {
-
-            int heroHealth = heroesMap.get(theHero).getHealth();
-            heroHealth -= cannon.getImpactPower();
-            heroesMap.get(theHero).setHealth(heroHealth);
-//                }
-//            }
-        }
-    }
-
-    private void startTransition(ImageView theHero, Building build) {
-
-        Platform.runLater(() -> {
-
-            TranslateTransition transition = new TranslateTransition();
-
-            transition.setNode(theHero);
-            transition.setDuration(Duration.millis((double) 10000 / heroesMap.get(theHero).getSpeed()));
-
-            transition.setByX(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX());
-            transition.setByY(buildingsMap.getKey(build).getLayoutY() - theHero.getLayoutY());
-
-            ImageView t = buildingsMap.getKey(build);
-
-            transition.play();
-        });
+        addNewBuilding(new ArcherTower());
+        addNewBuilding(new WizardTower());
+        addNewBuilding(new Cannon());
+        addNewBuilding(new TownHall());
 
     }
 }
 
-//==============================================================================================
-
-class BiMap<K, V> {
-    private final ObservableMap<K, V> map = FXCollections.observableHashMap();
-    private final ObservableMap<V, K> inverseMap = FXCollections.observableHashMap();
-
-    public void put(K key, V value) {
-        map.put(key, value);
-        inverseMap.put(value, key);
-    }
-
-    public ObservableMap<K, V> getMap() {
-        return map;
-    }
-
-    public ObservableMap<V, K> getInverseMap() {
-        return inverseMap;
-    }
-
-    public V getValue(K key) {
-        return map.get(key);
-    }
-
-    public K getKey(V value) {
-        return inverseMap.get(value);
-    }
-}

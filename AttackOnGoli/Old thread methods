@@ -1,0 +1,136 @@
+
+//    private void heroRangeThread(Hero theHero, Building build) {
+//
+//        Platform.runLater(() -> {
+//            try {
+//                setDamages(build, theHero);
+//            } catch (ThisHeroIsDead e) {
+//                throw new RuntimeException(e);
+//            }
+//        });
+//    }
+
+//    private void buildingRangeThread(Hero theHero, Building build) {
+//
+//        Platform.runLater(() -> {
+//            try {
+//                setBuildingDamage(build, theHero);
+//            } catch (ThisHeroIsDead e) {
+//                throw new RuntimeException(e);
+//            }
+//        });
+//    }
+
+//=============================================================================================
+
+//    private void setDamages(Building build, Hero theHero) throws ThisHeroIsDead {
+//
+//        while (build.getHealth() > 0 && theHero.getHealth() > 0) {
+//
+////            if (Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX()) <= 10) {
+//
+//            int buildHealth = build.getHealth();
+//            buildHealth -= theHero.getDamage();
+//            build.setHealth(buildHealth);
+////            }
+//        }
+//
+//        if (build.getHealth() <= 0) {
+//
+//            pain.getChildren().remove(build);
+//            buildingsArrayList.remove(build);
+//
+//        } else if (theHero.getHealth() <= 0) {
+//
+//            pain.getChildren().remove(theHero);
+//
+//            throw new ThisHeroIsDead();
+//        }
+//    }
+
+//==============================================================================================
+
+//    private void setBuildingDamage(Building build, Hero theHero) throws ThisHeroIsDead {
+//
+//        if (build instanceof ArcherTower archerTower) {
+//
+////            while (build.getHealth() > 0 && heroesMap.get(theHero).getHealth() > 0) {
+//
+////                if (archerTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())
+////                        && archerTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())) {
+//
+//            int heroHealth = theHero.getHealth();
+//            heroHealth -= archerTower.getImpactPower();
+//            theHero.setHealth(heroHealth);
+////                }
+////            }
+//            if (theHero.getHealth() <= 0) {
+//
+//                pain.getChildren().remove(theHero);
+//                throw new ThisHeroIsDead();
+//
+//            } else if (build.getHealth() <= 0) {
+//
+//                pain.getChildren().remove(build);
+//                buildingsArrayList.remove(build);
+//            }
+//
+//        } else if (build instanceof WizardTower wizardTower) {
+//
+////            while (heroesMap.get(theHero).getHealth() > 0) {
+//
+////                if (wizardTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())
+////                        && wizardTower.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())) {
+//
+//            int heroHealth = theHero.getHealth();
+//            heroHealth -= wizardTower.getImpactPower();
+//            theHero.setHealth(heroHealth);
+////                }
+////            }
+//
+//        } else if (build instanceof Cannon cannon) {
+//
+////            while (heroesMap.get(theHero).getHealth() > 0) {
+//
+////                if (cannon.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())
+////                        && cannon.getRange() >= Math.abs(buildingsMap.getKey(build).getLayoutX() - theHero.getLayoutX())) {
+//
+//            int heroHealth = theHero.getHealth();
+//            heroHealth -= cannon.getImpactPower();
+//            theHero.setHealth(heroHealth);
+////                }
+////            }
+//        }
+//    }
+
+
+}
+
+
+//==============================================================================================
+//
+//class BiMap<K, V> {
+//    private final ObservableMap<K, V> map = FXCollections.observableHashMap();
+//    private final ObservableMap<V, K> inverseMap = FXCollections.observableHashMap();
+//
+//    public void put(K key, V value) {
+//        map.put(key, value);
+//        inverseMap.put(value, key);
+//    }
+//
+//    public ObservableMap<K, V> getMap() {
+//        return map;
+//    }
+//
+//    public ObservableMap<V, K> getInverseMap() {
+//        return inverseMap;
+//    }
+//
+//    public V getValue(K key) {
+//        return map.get(key);
+//    }
+//
+//    public K getKey(V value) {
+//        return inverseMap.get(value);
+//    }
+//}

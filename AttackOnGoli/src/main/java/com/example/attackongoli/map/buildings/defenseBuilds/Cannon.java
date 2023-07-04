@@ -1,5 +1,6 @@
 package com.example.attackongoli.map.buildings.defenseBuilds;
 
+import com.example.attackongoli.GameLauncher;
 import com.example.attackongoli.map.buildings.Category;
 import javafx.scene.image.Image;
 
@@ -18,6 +19,11 @@ public class Cannon extends DefenseBuilding {
 //
 //        this.image = new ImageView(GameLauncher.class.getResource("cannon.png").toString());
 
-        this.setImage(new Image("cannon.png"));
+        this.setImage(new Image(GameLauncher.class.getResource("cannon.png").toString()));
+
+        this.setFitHeight(70);
+        this.setFitWidth(70);
+        this.setX(95);
+        this.setY(120);
     }
 }
