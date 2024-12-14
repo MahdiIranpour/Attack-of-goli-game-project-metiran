@@ -1,15 +1,43 @@
-# پروژه نهایی درس برنامه نویسی پیشرفته 
 
-استاد درس:  دکتر رمضانی 
+# Attack of Goli - Game Project
 
- نیمسال دوم تحصیلی ۰۱ -۰۲
+## Overview
+This project is a Java-based game developed as a final assignment for the UI-Advanced Programming course. The game revolves around the concept of defending a territory from the attack of a giant character, Goli, and involves strategic gameplay mechanics to defeat the threat.
 
-طراحان پروژه: تیم تی‌ای برنامه‌نویسی پیشرفته
+## Team Members
+- Amirali Goli
+- Mohammad Tavakoli
+- Melika Shirian
+- Reza Cheragh
+- Zahra Masoumi
+- Matin Azami
+- Asal Khaef
+- Mohammad Kazem Harandi
+- Sheida Abedpour
+- Milad Tavakoli
+- Amirali Lotfi
+- Amir Feiz
+- Shahin Sabzi
 
-امیرعلی گلی-محمد توکلی- ملیکا شیریان- رضا چراخ- زهرا معصومی - متین اعظمی-عسل خائف - محمدکاظم هرندی - شیدا عابدپور - میلاد توکلی - امیرعلی لطفی -  امیر فیض - شاهین سبزی
+## Features
+- Dynamic UI elements for an immersive game experience.
+- Multiple levels with increasing difficulty.
+- Advanced programming techniques in Java to handle the game logic.
 
+## Getting Started
+Clone this repository and create a new branch to start modifying the code.
+```bash
+git clone https://github.com/MahdiIranpour/Attack-of-goli-game-project-metiran.git
+cd Attack-of-goli-game-project-metiran
+git checkout -b your-new-branch
+```
 
-شما می‌توانید فایل مستند پروژه را دریافت کرده و مطالعه کنید!
+## Resources
+For further information, you can download the project documentation from the repository.
 
-از ریپوزیتوری ساخته شده clone بگیرید تا در سیستم خود داشته باشید . سپس یک برنچ جدید ساخته  و تغییرات خود را در آن برنچ کامیت کنید. کامیت های درست در بازه های زمانی کوتاه، بخشی از معیار نمره دهی میباشد
+## Requirements
+- Java (100% of the code is written in Java)
+- IDE supporting Java (e.g., IntelliJ IDEA, Eclipse)
 
+## License
+This project is licensed under the MIT License.
