@@ -2,22 +2,7 @@
 # Attack of Goli - Game Project
 
 ## Overview
-This project is a Java-based game developed as a final assignment for the UI-Advanced Programming course. The game revolves around the concept of defending a territory from the attack of a giant character, Goli, and involves strategic gameplay mechanics to defeat the threat.
-
-## Team Members
-- Amirali Goli
-- Mohammad Tavakoli
-- Melika Shirian
-- Reza Cheragh
-- Zahra Masoumi
-- Matin Azami
-- Asal Khaef
-- Mohammad Kazem Harandi
-- Sheida Abedpour
-- Milad Tavakoli
-- Amirali Lotfi
-- Amir Feiz
-- Shahin Sabzi
+This project is a Java-based game developed as a final assignment for the UI-Advanced Programming course. The game revolves around the concept of defending a territory from the attack of a giant character, Goli, and involves strategic gameplay mechanics to defeat the threat. it is an small simulation of clash of clans game for a student project.
 
 ## Features
 - Dynamic UI elements for an immersive game experience.
